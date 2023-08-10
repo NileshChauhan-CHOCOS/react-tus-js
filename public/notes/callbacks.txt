@@ -1,0 +1,23 @@
+﻿CALLBACKS
+
+
+________________
+
+
+I WILL CALL BACK LATER!  😮
+
+
+A callback is a function passed as an argument to another function, and called after the main function has finished its execution.
+
+
+Callbacks allow you to handle the results of an asynchronous operation in a non-blocking manner, which means that
+
+
+the program can continue to run while the operation is being executed.
+
+
+Why use Callbacks?
+
+
+Callbacks are used to handle the results of asynchronous operations in a non-blocking manner. Asynchronous operations are operations that take a significant amount of time to complete, such as network requests, file I/O, and database queries. If these operations were executed synchronously, the program would freeze and wait for the operation to complete before continuing. This can lead to a poor user experience, as the program would appear unresponsive.
+Callbacks allow you to continue executing code while the operation is being executed in the background. Once the operation has completed, the callback function is called with the result of the operation. This way, you can ensure that the program remains responsive and the user experience is not impacted.
