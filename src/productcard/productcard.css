@@ -1,0 +1,32 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Edu+SA+Beginner&display=swap');
+
+.ProductCard{
+    border-radius: 25px 25px 25px 25px;
+    border: 2px solid gray;
+    padding: 12px;
+    margin: 12px;
+}
+h1{
+    font-family: cursive;
+}
+h3{
+    font-family: 'EB Garamond', serif;
+}
+.Description{
+    height: 50%;
+    width: 50%;
+    border: 4px solid hotpink;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 25px 0 25px 0;
+}
+p1{
+    box-sizing: border-box;
+    font-family: 'Edu SA Beginner', cursive;
+}
+img{
+    width: 12%;
+    height: 12%;
+}

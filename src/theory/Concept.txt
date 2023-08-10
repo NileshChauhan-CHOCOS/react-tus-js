@@ -1,0 +1,11 @@
+React is light weight library
+
+react-dom : when to build website
+react-native : mobile application
+react-in : cli-application : 
+
+package.json is the file from where npm reads all the dependencies and install an app needs
+it follows node style coding
+
+major.minor.patch
+^19.1.1
