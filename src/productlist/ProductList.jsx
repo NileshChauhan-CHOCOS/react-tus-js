@@ -44,12 +44,8 @@ function getProductsApi(callback){
     },5000);
 }
 function ProductList(){
-    let loadingState = useState(true);
-    const isLoading = loadingState[0];
-    const setIsLoading = loadingState[1]; 
-    const productState = useState([]);
-    let allProducts = productState[0];
-    let setAllProducts = productState[1];
+    const [isLoading, setIsLoading] = useState(true);
+    const [allProducts, setAllProducts] = useState([])
     //console.log(productState);
     /*function abc(res){
         setAllProducts(res)
