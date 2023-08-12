@@ -1,11 +1,13 @@
+import { useState } from "react";
 import ProductCard from "../productcard/ProductCard";
+import "./product-list.css"
 const products = [
     {
         "id" : 0,
         "title" : "Brief History of Time",
         "author" : "Stephen Hawking",
         "description" : "Explore the mysteries of the universe with this acclaimed masterpiece by a celebrated physicist. From the origins of time to the boundaries of the universe, delve into the secrets of space and time. Discover the great theories of the cosmos from Newton to Einstein, and explore the wonders of the Big Bang, black holes, and more. Written in clear and concise language, this book offers a fascinating and accessible introduction to the universe and its wonders. This new edition includes exciting updates from the author, along with a companion app, Stephen Hawking's Pocket Universe.",
-        "img" : "D:/javascript/react-tutorial/public/Quantum-mechanics.png"
+        "img" : "/Quantum-mechanics.png"
     },
     {
         "id" : 1,
@@ -42,19 +44,43 @@ function getProductsApi(callback){
     },5000);
 }
 function ProductList(){
-        let allProducts = [];
-        getProductsApi(function(res){
-            allProducts = res;
-            console.log(allProducts);
-        });
-    return(
-        <div className="ProductList">
-            {
-                products.map(product =>{
-                    return (<ProductCard key ={product.id} title = {product.title} author = {product.author} description = {product.description}/>)
-                })
-            }
-        </div>
-    );
+    let loadingState = useState(true);
+    const isLoading = loadingState[0];
+    const setIsLoading = loadingState[1]; 
+    const productState = useState([]);
+    let allProducts = productState[0];
+    let setAllProducts = productState[1];
+    //console.log(productState);
+    /*function abc(res){
+        setAllProducts(res)
+    }
+    getProductsApi(abc);*/
+    //console.log("setAllProducts :- " + setAllProducts);
+    //console.log("allProducts :- " + allProducts);
+    console.log("api started");
+    getProductsApi(function(res){
+        setAllProducts(res);  
+        //console.log(allProducts);
+        setIsLoading(false);
+        console.log("api finished task");
+        
+    });
+    if(isLoading){
+        return(
+            <div className="ProductList">Loading the page  ...</div>
+        );
+    }
+    else{
+        return(
+            <div className="ProductList">
+                {
+                    allProducts.map(product =>{
+                        return (<ProductCard key ={product.id} title = {product.title} author = {product.author} description = {product.description}/>)
+                    })
+                }
+            </div>
+        );
+    }
+   
 }
 export default ProductList;
