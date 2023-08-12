@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ProductCard from "../productcard/ProductCard";
 import "./product-list.css"
+import Loader from "../loader/Loader"
 const products = [
     {
         "id" : 0,
@@ -41,7 +42,7 @@ const products = [
 function getProductsApi(callback){
     setTimeout(function(){
         callback(products);
-    },5000);
+    },3000);
 }
 function ProductList(){
     const [isLoading, setIsLoading] = useState(true);
@@ -63,7 +64,7 @@ function ProductList(){
     });
     if(isLoading){
         return(
-            <div className="ProductList">Loading the page  ...</div>
+            <Loader/>
         );
     }
     else{
