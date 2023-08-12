@@ -10,9 +10,11 @@
 }
 h1{
     font-family: cursive;
+    font-size: 30px;
 }
 h3{
     font-family: 'EB Garamond', serif;
+    font-size: 25px;
 }
 .Description{
     height: 50%;
@@ -22,9 +24,10 @@ h3{
     padding: 12px;
     border-radius: 25px 0 25px 0;
 }
-p1{
+p{
     box-sizing: border-box;
     font-family: 'Edu SA Beginner', cursive;
+    font-size: 25px;
 }
 img{
     width: 12%;
