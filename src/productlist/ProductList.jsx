@@ -5,7 +5,7 @@ const products = [
         "title" : "Brief History of Time",
         "author" : "Stephen Hawking",
         "description" : "Explore the mysteries of the universe with this acclaimed masterpiece by a celebrated physicist. From the origins of time to the boundaries of the universe, delve into the secrets of space and time. Discover the great theories of the cosmos from Newton to Einstein, and explore the wonders of the Big Bang, black holes, and more. Written in clear and concise language, this book offers a fascinating and accessible introduction to the universe and its wonders. This new edition includes exciting updates from the author, along with a companion app, Stephen Hawking's Pocket Universe.",
-        "img" : "D:/javascript/react-tutorial/public/Quantum-mechanics.png"
+        "img" : "/Quantum-mechanics.png"
     },
     {
         "id" : 1,
