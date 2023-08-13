@@ -4,7 +4,7 @@ import ProductList from "./productlist/ProductList"
 export default function App() {
   return (
     <div className="App">
-        <ProductList/>
+      <ProductList/>
     </div>
   );
 }
