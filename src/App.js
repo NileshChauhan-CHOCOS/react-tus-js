@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 import ProductList from "./productlist/ProductList"
+import Header from "./header/Header"
 export default function App() {
   return (
     <div className="App">
+      <Header/>
       <ProductList/>
     </div>
   );
