@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "../productcard/ProductCard";
 import "./product-list.css"
 import Loader from "../loader/Loader"
@@ -44,40 +44,36 @@ function getProductsApi(callback){
         callback(products);
     },3000);
 }
-function ProductList(){
+export default function ProductList(){
     const [isLoading, setIsLoading] = useState(true);
     const [allProducts, setAllProducts] = useState([])
-    //console.log(productState);
-    /*function abc(res){
-        setAllProducts(res)
-    }
-    getProductsApi(abc);*/
-    //console.log("setAllProducts :- " + setAllProducts);
-    //console.log("allProducts :- " + allProducts);
-    console.log("api started");
-    getProductsApi(function(res){
+    useEffect(() =>{
+        console.log("api started");
+        getProductsApi(function(res){
         setAllProducts(res);  
         //console.log(allProducts);
         setIsLoading(false);
-        console.log("api finished task");
-        
+        console.log("api finished task"); 
     });
-    if(isLoading){
-        return(
-            <Loader/>
-        );
-    }
-    else{
-        return(
-            <div className="ProductList">
-                {
-                    allProducts.map(product =>{
-                        return (<ProductCard key ={product.id} title = {product.title} author = {product.author} description = {product.description}/>)
-                    })
-                }
-            </div>
-        );
-    }
-   
+}, [isLoading, allProducts]);
+if(isLoading){
+  return(
+  <Loader/>
+  );
 }
-export default ProductList;
+else{
+return(
+<div className="ProductList">
+  {
+  allProducts.map(product =>{
+    return (
+    <>
+    <ProductCard key ={product.id} title = {product.title} author = {product.author} description = {product.description}/>
+    </>
+    )
+    })
+  }
+  </div>
+  );
+}
+}
